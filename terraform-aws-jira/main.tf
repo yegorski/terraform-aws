@@ -13,5 +13,9 @@ module "jira" {
   vpc_id     = "${data.terraform_remote_state.account.vpc_id}"
   region     = "us-east-1"
 
-  tags = "${var.tags}"
+  tags = {
+    Owner       = "yegorski"
+    Environment = "production"
+    Source      = "https://github.com/yegorski/terraform-aws-jira"
+  }
 }
